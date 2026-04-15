@@ -25,4 +25,9 @@ public class TodoController {
     public Todo create(@RequestBody Todo todo) {
         return repo.save(todo);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        repo.deleteById(id);
+    }
 }
