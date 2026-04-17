@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 import java.util.*;
 import com.example.backend.entity.Todo;
 import com.example.backend.repository.TodoRepository;
@@ -22,12 +23,19 @@ public class TodoController {
     }
 
     @PostMapping
-    public Todo create(@RequestBody Todo todo) {
+    public Todo create(@Valid @RequestBody Todo todo) {
         return repo.save(todo);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         repo.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Todo update(@PathVariable Long id, @Valid @RequestBody Todo newTodo) {
+        Todo todo = repo.findById(id).orElseThrow();
+        todo.setTitle(newTodo.getTitle());
+        return repo.save(todo);
     }
 }
