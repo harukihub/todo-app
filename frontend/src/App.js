@@ -81,11 +81,11 @@ function App() {
             <li className="todo-item" key={todo.id}>
               <span className="todo-text">{todo.title}</span>
               <div className="button-group">
-                <button className="button-edit" onClick={() => startEdit(todo)}>
+                <button className="edit-button" onClick={() => startEdit(todo)}>
                   編集
                 </button>
                 <button
-                  className="button-delete"
+                  className="delete-button"
                   onClick={() => deleteTodo(todo.id)}
                 >
                   削除
