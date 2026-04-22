@@ -6,7 +6,8 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [editingId, setEditingId] = useState(null);
-  const API_BASE = "http://127.0.0.1:8080/api/todos";
+  //const API_BASE = "http://127.0.0.1:8080/api/todos";
+  const API_BASE = "/api/todos";
 
   const fetchTodos = () => {
     axios
