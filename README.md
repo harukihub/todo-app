@@ -4,7 +4,7 @@ TODOアプリ（React × Spring Boot × PostgreSQL）
 React + Spring Boot + PostgreSQL を使用したシンプルなTODO管理アプリです。
 フロントエンドとバックエンドを統合し、1つのアプリとして動作します。
 
-## 画面イメージ
+- 画面イメージ
 
 ![TODO一覧](images/screenshot.png)
 
